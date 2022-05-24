@@ -6,7 +6,7 @@
 ########################################################
 
 
-echo "Start the docker container"
+echo "***** Start the docker container *****"
 
 result=$( docker ps -q -f name=mongodb )
 if [[ $? -eq 0 ]]; then
