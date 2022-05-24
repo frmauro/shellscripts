@@ -38,6 +38,17 @@ echo "No such container"
 fi
 
 
+result=$( docker ps -q -f name=producthandlersmessagekafak )
+if [[ $? -eq 0 ]]; then
+echo "Start Container producthandlersmessagekafak"
+ docker container start producthandlersmessagekafak
+# echo "Deleted the existing docker container"
+else
+echo "No such container"
+fi
+
+
+
 result=$( docker ps -q -f name=salesusernode )
 if [[ $? -eq 0 ]]; then
 echo "Start Container salesusernode"
