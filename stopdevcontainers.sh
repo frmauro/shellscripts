@@ -34,6 +34,16 @@ else
 echo "No such container"
 fi
 
+
+result=$( docker ps -q -f name=kafka )
+if [[ $? -eq 0 ]]; then
+echo "Stop Container kafka"
+ docker container stop kafka
+else
+echo "No such container"
+fi
+
+
 result=$( docker ps -q -f name=producthandlersmessagekafak )
 if [[ $? -eq 0 ]]; then
 echo "Stop Container producthandlersmessagekafak"

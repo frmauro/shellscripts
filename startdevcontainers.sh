@@ -37,6 +37,15 @@ else
 echo "No such container"
 fi
 
+result=$( docker ps -q -f name=kafka )
+if [[ $? -eq 0 ]]; then
+echo "Start Container kafka"
+ docker container start kafka
+# echo "Deleted the existing docker container"
+else
+echo "No such container"
+fi
+
 
 result=$( docker ps -q -f name=producthandlersmessagekafak )
 if [[ $? -eq 0 ]]; then
