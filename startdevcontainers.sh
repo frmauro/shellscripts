@@ -119,6 +119,17 @@ echo "No such container"
 fi
 
 
+result=$( docker ps -q -f name=salesusernextjs )
+if [[ $? -eq 0 ]]; then
+echo "Start Container salesusernextjs"
+ docker container start salesusernextjs
+# echo "Deleted the existing docker container"
+else
+echo "No such container"
+fi
+
+
+
 result=$( docker ps -q -f name=salesorderfrontend )
 if [[ $? -eq 0 ]]; then
 echo "Start Container salesorderfrontend"
